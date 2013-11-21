@@ -167,9 +167,6 @@ public class SelectActivityCommon implements OnClickListener{
 	public void showMain(){
 		Intent intent = new Intent(act, MainActivity.class);
 		act.startActivity(intent);
-		viewpager.setOnPageChangeListener(null);
-		viewpager.removeAllViews();
-		viewpager.removeAllViewsInLayout();
 	}
 	
 	

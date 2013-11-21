@@ -28,4 +28,10 @@
     
     
     <dimen name="bottom_bar_height">56dp</dimen>
+    
+    <dimen name="intro_img_nav_margin">-320dp</dimen>
+    
+    <dimen name="intro_img_nav_size">62dp</dimen>
+    <dimen name="video_img_nav_size">100dp</dimen>
+    
 </resources>

@@ -18,8 +18,10 @@ import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -148,6 +150,8 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 		Log.d(this.getClass().getName(), text);
 	}
 
+	
+	
 	/**
 	 * 返回动画
 	 */
@@ -363,6 +367,35 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 	 * 界面销毁之前的做的事情
 	 */
 	protected abstract void beforeDestory();
+	
+	/**
+	 * 获取asset目录下的图片文件，转成 drawable
+	 */
+	public Drawable getDrawableFromAsset(String filePath){
+		Drawable drawable = null;
+		AssetManager asm = getAssets();
+		try{
+			InputStream is = asm.open(filePath);
+			drawable = Drawable.createFromStream(is, null);
+		}catch(Exception e){
+		}
+		return drawable;
+	}
+	
+	
+	/**
+	 * 获取asset目录下的图片文件，转成 Bitmap
+	 */
+	public Bitmap getBitmapFromAsset(String filePath){
+		Bitmap bitmap = null;
+		AssetManager asm = getAssets();
+		try{
+			InputStream is = asm.open(filePath);
+			bitmap = BitmapFactory.decodeStream(is);
+		}catch(Exception e){
+		}
+		return bitmap;
+	}
 
 	/**
 	 * 执行一个任务后返回的结果

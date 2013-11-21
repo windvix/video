@@ -2,42 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F4EF"
+    android:background="#FBFBF3"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_weight="0"
-        android:background="@drawable/title_bar_bg" >
+        android:layout_weight="0" >
 
-            <!-- back btn -->
-            <LinearLayout
-                android:id="@+id/backBtn"
+        <!-- back btn -->
+
+        <LinearLayout
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="left|center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_btn" />
+
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2dp"
                 android:gravity="left|center"
-                android:orientation="horizontal" >
+                android:text="发现"
+                android:textColor="@drawable/back_btn_text_color"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+        <!-- end back ben -->
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/back_btn" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="2dp"
-                    android:gravity="left|center"
-                    android:text="发现"
-                    android:visibility="invisible"
-                    android:textColor="@drawable/back_btn_text_color"
-                    android:textSize="20sp" />
-            </LinearLayout>
-            <!-- end back ben -->
         <TextView
             android:id="@+id/titleTv"
             android:layout_width="wrap_content"
@@ -47,6 +48,53 @@
             android:text="个人视频"
             android:textColor="#2C97CD"
             android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pk_video_bg_01" />
+        
+        <ImageView 
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/play_btn_default"
+            />
+        
+        <ImageView 
+            android:id="@+id/defaultPlayBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/video_play_click_bg"
+            android:alpha="0.3"
+            android:scaleType="fitXY"
+            />
+        
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/video_img_nav_size"
+        android:layout_weight="0"
+        android:clipChildren="false"
+        android:layerType="software" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clipChildren="false" />
     </RelativeLayout>
 
 </LinearLayout>

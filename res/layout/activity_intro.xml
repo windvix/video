@@ -195,6 +195,7 @@
                 android:textColor="#2E2D29" />
 
             <TextView
+                android:id="@+id/introSayingTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -232,18 +233,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
-        
-        
-        <ImageView 
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:layerType="software" >
+
+        <ImageView
+            android:id="@+id/introImg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/intro_test_img_01"
-            android:scaleType="centerCrop"
-            
-            />
-        
-        
+            android:layout_centerInParent="true"
+            android:scaleType="matrix" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/intro_img_nav_size"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:clipChildren="false" >
+        </android.support.v4.view.ViewPager>
+
     </RelativeLayout>
 
 </LinearLayout>
